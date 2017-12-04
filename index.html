@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="src/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="icon" href="images/icon.png">
+        <title>Drop The Code - CS 386</title>
+    </head>
+    <body>
+        <div class="main-container">
+            <div id="back" class="back-button center-align" onclick="changePage('back')">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </div>
+            <div data-page="home" class="page">
+                <div class="menu-block">
+                    <div class="title"><img src="images/icon.png" width="35" height="35" /> Drop The Code</div>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('user-login')">User Login</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('guest-login')">Guest Login</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('teacher-login')">Teacher Login</button>
+                </div>
+            </div>
+            <div data-page="user-login" class="page">
+                <div class="menu-block">
+                    <input placeholder="Username" type="text" id="user-username" />
+                </div>
+                <div class="menu-block">
+                    <input placeholder="Password" type="password" id="user-password" />
+                </div>
+                <div class="menu-block">
+                    <button onclick="tryLogin('main')">Login</button>
+                </div>
+            </div>
+            <div data-page="guest-login" class="page">
+                <div class="menu-block">
+                    <div class="title">Logged in as a Guest</div>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('main')">Continue</button>
+                </div>
+            </div>
+            <div data-page="teacher-login" class="page">
+                <div class="menu-block">
+                    <div class="title">Teacher Options</div>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('view-students')">View Students</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('assign-students')">Assign Students</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('remind-students')">Send Reminders</button>
+                </div>
+            </div>
+            <div data-page="view-students" class="page">
+                <div class="menu-block">
+                    <div class="title">All Students</div>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('levels')">Aeron Benjy</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('levels')">Dominik Zuriel</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('levels')">Matthias Iosif</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('levels')">Geghard Alin</button>
+                </div>
+            </div>
+            <div data-page="game" class="page">
+                <div class="game-container">
+                </div>
+            </div>
+            <div data-page="completed" class="page">
+                <div class="menu-block">
+                    <div class="title">Completed!</div>
+                </div>
+            </div>
+            <div data-page="not-completed" class="page">
+                <div class="menu-block">
+                    <div class="title">Not Completed!</div>
+                </div>
+            </div>
+            <div data-page="assign-students" class="page">
+                <div class="menu-block">
+                    <div class="title">Choose Student</div>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('levels')">Aeron Benjy</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('levels')">Dominik Zuriel</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('levels')">Matthias Iosif</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('levels')">Geghard Alin</button>
+                </div>
+            </div>
+            <div data-page="main" class="page">
+                <div class="menu-block">
+                    <div class="title"><img src="images/icon.png" width="35" height="35" />  Drop The Code</div>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('levels')">Play Game</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('instructions')">Instructions</button>
+                </div>
+                <hr>
+                <div class="menu-block">
+                    <button onclick="changePage('settings')">Settings</button>
+                </div>
+                <hr>
+                <div class="menu-block">
+                    <button onclick="changePage('home')">Logout</button>
+                </div>
+            </div>
+            <div data-page="instructions" class="page">
+                <div class="menu-block">
+                    <div class="title">Instructions</div>
+                </div>
+                <hr>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/moveinstruction.png" /><div><p>Help robot friend recharge his battery</p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/draginstruction.png" /><div><p>Drag and drop instructions onto his instruction track and click to remove the instruction from the track</p></div></div>
+                </div>
+                <hr>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/left.png" /><div><p><b>Move</b> the robot <b>left</b></p></p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/right.png" /><div><p><b>Move</b> the robot <b>right</b></p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/up.png" /><div><p><b>Move</b> the robot <b>up</b></p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/down.png" /><div><p><b>Move</b> the robot <b>down</b></p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/loop2.png" /><div><p><b>Loop</b> back <b>2 instructions</b> on the same track</p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/loop3.png" /><div><p><b>Loop</b> back <b>3 instructions</b> on the same track</p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/loop4.png" /><div><p><b>Loop</b> back <b>4 instructions</b> on the same track</p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/trackup.png" /><div><p><b>Switch</b> to the <b>track above</b> the current track</p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/trackdown.png" /><div><p><b>Switch</b> to the <b>track below</b> the current track</p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/trackswitch.png" /><div><p><b>Cycle down</b> a <b>track</b>, wrapping around the last</p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/testwallleft.png" /><div><p><b>If</b> there is a <b>wall</b> to the <b>left of the robot</b>, execute the next instruction, otherwise, skip it</p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/testwallleft.png" /><div><p><b>If</b> there is a <b>wall</b> to the <b>right of the robot</b>, execute the next instruction, otherwise, skip it</p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/testwallup.png" /><div><p><b>If</b> there is a <b>wall above the robot</b>, execute the next instruction, otherwise, skip it</p></div></div>
+                </div>
+                <div class="menu-block">
+                    <div class="instruction"><img src="images/testwalldown.png" /><div><p><b>If</b> there is a <b>wall below the robot</b>, execute the next instruction, otherwise, skip it</p></div></div>
+                </div>
+            </div>
+            <div data-page="settings" class="page">
+                <div class="menu-block">
+                    <div class="title">Choose a Setting</div>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('difficulty')">Change Difficulty</button>
+                </div>
+            </div>
+            <div data-page="difficulty" class="page">
+                <div class="menu-block">
+                    <div class="title">Choose a Difficulty</div>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('chosen')">Beginner</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('chosen')">Intermediate</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('chosen')">Expert</button>
+                </div>
+            </div>
+            <div id="levelmenu" data-page="levels" class="page">
+                <div class="menu-block">
+                    <div class="title">Choose A Level</div>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'basics')">Basics</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'basicsII')">Basics II</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'spikes')">Spikes!</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'spikesII')">Spikes II</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'multiplegoals')">Several Goals</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'multiplerobots')">Everything's Better With Robots</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'spikesIII')">Spikes III</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'loops')">A Bit Loopy</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'loopsII')">More Loops</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'tracks')">Multiple Tracks?</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'conditionsI')">Conditioning</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'conditionsII')">But What If?</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('game', 'TestI')">Mondo-Hard Level I</button>
+                </div>
+            </div>
+            <div data-page="chosen" class="page">
+                <div class="menu-block">
+                    <div class="title">Difficulty Level Chosen!</div>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('back')">Return</button>
+                </div>
+            </div>
+            <div data-page="nothing" class="page">
+                <div class="menu-block">
+                    <div class="title">Nothing</div>
+                </div>
+            </div>
+            <div data-page="remind-students" class="page">
+                <div class="menu-block">
+                    <div class="title">Which Student?</div>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('reminder-format')">Aeron Benjy</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('reminder-format')">Dominik Zuriel</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('reminder-format')">Matthias Iosif</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('reminder-format')">Geghard Alin</button>
+                </div>
+            </div>
+            <div data-page="reminder-format" class="page">
+                <div class="menu-block">
+                    <div class="title">Choose Format</div>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('emailpage')">Send E-mail</button>
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('pushnotification')">Send Push Notification</button>
+                </div>
+            </div>
+            <div data-page="emailpage" class="page">
+                <div class="menu-block">
+                    <input placeholder="Student E-mail" />
+                </div>
+                <div class="menu-block">
+                    <button onclick="changePage('email-sent-page')">Send</button>
+                </div>
+            </div>
+            <div data-page="email-sent-page" class="page">
+                <div class="menu-block">
+                    <div class="title">E-mail Sent!</div>
+                </div>
+            </div>
+            <div data-page="pushnotification" class="page">
+                <div class="menu-block">
+                    <div class="title">Student Notified</div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="libs/jquery-3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="src/js/DragDropTouch.js"></script>
+        <script type="text/javascript" src="src/js/classes.js"></script>
+        <script type="text/javascript" src="src/js/cookies.js"></script>
+        <script type="text/javascript" src="src/js/menus.js"></script>
+        <script type="text/javascript" src="src/js/main.js"></script>
+        <script type="text/javascript" src="src/js/game.js"></script>
+    </body>
+</html>

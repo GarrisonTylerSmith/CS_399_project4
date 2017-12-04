@@ -1,0 +1,342 @@
+head, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.back-button {
+    z-index: 100;
+    color: #fff;
+    font-size: 4em;
+    position: fixed;
+    cursor: pointer;
+    top: 12px; left: 24px;
+
+    text-shadow: 0 2px 5px rgba(0,0,0,.18);
+
+    transition: text-shadow 0.2s;
+}
+.back-button:hover {
+    text-shadow: 0 4px 12px rgba(0,0,0,.32);
+}
+
+img.overlay {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 75px;
+}
+
+.main-container {
+    position: absolute;
+    top: 0; left: 0;
+    box-sizing: border-box;
+    padding: 20px;
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    background-color: #03A9F4;
+
+    justify-content: center;
+}
+
+.page {
+    display: none;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.center-align {
+    align-self: center;
+}
+
+.menu-block {
+    border-radius: 5px;
+    width: 500px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 5px 0;
+    align-self: center;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.18),
+                0 0 2px 0 rgba(0,0,0,.2);
+}
+
+.menu-block div, .menu-block button, .menu-block input {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.menu-block button {
+    display: block;
+    font-size: 1.75em;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+
+    text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+    background-color: rgba(255,255,255,.3);
+    color: #015C83;
+    border: 3px solid #015C83;
+
+    transition: box-shadow 0.2s,
+                background-color 0.2s,
+                color 0.2s;
+}
+
+.menu-block button:hover {
+    background-color: rgba(255,255,255,.9);
+
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,.32),
+                0 0 2px 0 rgba(0,0,0,.2);
+}
+
+.title {
+    background-color: #0288D1;
+    color: #fff;
+    font-size: 3em;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+.instruction {
+    background-color: rgba(255,255,255,.3);
+    color: #fff;
+    font-size: 1em;
+
+    display: flex;
+}
+.instruction > img {
+    width: auto;
+    height: 80px;
+    margin: 10px;
+    border-radius: 5px;
+
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.18),
+                0 0 2px 0 rgba(0,0,0,.2);
+}
+
+.instruction > div {
+    line-height: 1.1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+.menu-block input {
+    border: none;
+    display: block;
+    background-color: #B3E5FC;
+    font-size: 2em;
+    text-align: center;
+    color: #222;
+    outline: none;
+}
+
+.game-container {
+    user-select: none;
+    position: relative;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.18),
+                0 0 2px 0 rgba(0,0,0,.2);
+}
+
+.game-container > div:first-child {
+    border-top: 2px solid white;
+}
+.game-container > div {
+    position: relative;
+    background-color: rgba(255,255,255,.3);
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+.board-container {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    border-width: 2px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#game-notification {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+    z-index: 99;
+    font-size: 24px;
+    display: none;
+
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.18),
+                0 0 2px 0 rgba(0,0,0,.2);
+}
+
+.piece-container {
+    user-select: none;
+    padding-top: 32px;
+}
+.piece-container::before {
+    content: "All Instructions";
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    color: #fff;
+    text-shadow: 0 1px 1px black;
+    font-size: 18px;
+}
+
+.solution-container {
+    padding-top: 32px;
+}
+.solution-container::before {
+    content: "Current Instruction Set";
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    color: #fff;
+    text-shadow: 0 1px 1px black;
+    font-size: 18px;
+}
+
+.start-container {
+    padding: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.start-button[disabled] {
+    pointer-events: none;
+    opacity: 0.8;
+}
+.start-button {
+    width: 100%;
+    height: 52px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #222;
+    background-color: #8bc34a;
+    border: 2px solid #1B5E20;
+    border-radius: 5px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+
+    transition: background-color ease 0.25s,
+                color ease 0.25s;
+}
+.start-button:hover {
+    background-color: #2E7D32;
+    color: #fff;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+    width: 100%;
+    margin: 7px 0;
+}
+
+.track-container {
+    position: relative;
+    display: flex;
+    border-top: 2px solid #fff;
+    padding: 5px 5px 5px 45px;
+}
+.track-container::before {
+    content: "Track";
+    color: #fff;
+    position: absolute;
+    top: 25px;
+    left: 5px;
+    text-shadow: 0 2px 5px rgba(0,0,0,.18);
+    font-size: 14px;
+}
+
+.solution-spot {
+    margin: 3px;
+    border: 3px solid #333;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: #a6a6a6;
+    background: repeating-linear-gradient(45deg, #a6a6a6, #a6a6a6 10px, #8c8c8c 10px, #8c8c8c 20px);
+}
+.solution-spot-button > .game-piece-image {
+    cursor: pointer;
+}
+
+.solution-spot-button {
+    padding: 0;
+    border-width: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    outline: none;
+}
+
+.solution-selected {
+    border-color: #ffeb3b;
+    box-shadow: 0 2px 5px 0 rgba(235,235,59,.18),
+                0 0 2px 0 rgba(235,235,59,.2);
+}
+
+.game-pieces {
+    border-top: 2px solid #fff;
+    padding: 5px;
+}
+
+.game-piece {
+    display: inline-flex;
+    position: relative;
+    width: 75px;
+    height: 75px;
+    margin: 6px;
+    border-radius: 10px;
+    background: #fff;
+    cursor: move;
+
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.18),
+                0 0 2px 0 rgba(0,0,0,.2);
+}
+
+.game-piece.none-remain {
+    opacity: 0.5;
+    cursor: default;
+}
+.game-piece.none-remain > .game-piece-image {
+    pointer-events: none;
+}
+
+.game-piece-image {
+    border-radius: 6px;
+    width: inherit;
+    cursor: move;
+}
+
+.game-piece-number {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 20px;
+    background: #E91E63;
+    color: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,.48);
+}
